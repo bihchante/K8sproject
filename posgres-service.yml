@@ -7,7 +7,7 @@ metadata:
     author: chante
 spec:
   ports:
-    targetPort: 5432
-    port: 5432
+   - targetPort: 5432
+     port: 5432
   selector:
     type: postgres

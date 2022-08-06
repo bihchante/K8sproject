@@ -21,8 +21,18 @@ spec:
           image: postgres
           env:
             - name: POSTGRES_PASSWORD
-              value: chante
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: password
             - name: POSTGRES_USER
-              value: chante
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: username
             - name: POSTGRES_DB
-              value: mydb
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: dbname
+
